@@ -85,92 +85,116 @@ LEADS = [
          head="US proposes tariffs on 14 partners",
          summ="China faces up to 40%, India 25%, Japan 15%. Beijing, "
               "Brussels and Delhi reject the plan.",
-         kind="tariffs"),
+         kind="tariffs", src="Reuters", st="OFFICIAL"),
     dict(tag="CONFLICT", place="RIYADH", color=(140, 29, 24),
          head="Missiles over Riyadh; Houthis hit Saudi refinery",
          summ="Air defences down two ballistic missiles; oil climbs "
               "toward $95 a barrel.",
-         kind="missile"),
+         kind="missile", src="CNN", st="REPORTED"),
     dict(tag="SOCIETY", place="NEW YORK", color=(90, 70, 40),
          head="Macy's 100th parade put off to Saturday",
          summ="First weather delay in its history as a nor'easter "
               "bears down on New York.",
-         kind="balloon"),
+         kind="balloon", src="Reuters", st="OFFICIAL"),
 ]
 
 GRID = [
     ("DISASTER", "CAIRO", (179, 84, 30), "flame",
      "Tanker fire kills 31 on Cairo ring road",
-     "A fuel tanker overturned and burned; 21 hurt."),
+     "A fuel tanker overturned and burned; 21 hurt.",
+     "Reuters", "CONFIRMED"),
     ("CONFLICT", "KYIV", (140, 29, 24), "jet",
      "Ukraine hits five jets at Russian airbase",
-     "Kyiv says it struck Savasleyka; Russia hit a mall."),
+     "Kyiv says it struck Savasleyka; Russia hit a mall.",
+     "Reuters", "REPORTED"),
     ("MARKETS", "SEOUL", (20, 83, 45), "bank",
      "Bank of Korea lifts rate to 3.25%",
-     "Third hike of 2026; AI export boom fuels growth."),
+     "Third hike of 2026; AI export boom fuels growth.",
+     "Reuters", "OFFICIAL"),
     ("CONFLICT", "TEHRAN", (140, 29, 24), "exit",
      "US tells citizens to leave Iran",
-     "Washington warns of escalation as Israel readies a strike."),
+     "Washington warns of escalation as Israel readies a strike.",
+     "Reuters", "OFFICIAL"),
     ("MARKETS", "NEW YORK", (20, 83, 45), "down",
      "Nasdaq nears bear market in AI sell-off",
-     "AI stocks slide again; Nvidia falls, S&P warns."),
+     "AI stocks slide again; Nvidia falls, S&P warns.",
+     "CNBC", "CONFIRMED"),
     ("TRANSPORT", "OSLO", (91, 70, 54), "jet",
      "Norse Atlantic suspends all flights",
-     "Cash-strapped airline seeks funds; bankruptcy looms."),
+     "Cash-strapped airline seeks funds; bankruptcy looms.",
+     "Reuters", "OFFICIAL"),
     ("TECH", "BROOKLYN", (74, 44, 109), "gavel",
      "Huawei guilty on 10 of 12 counts",
-     "US jury convicts it of trade-secret theft and fraud."),
+     "US jury convicts it of trade-secret theft and fraud.",
+     "Reuters", "OFFICIAL"),
     ("SPACE", "WASHINGTON", (15, 42, 74), "sat",
      "FCC clears SpaceX plan for 1m satellites",
-     "Approval covers orbital data centres; critics object."),
+     "Approval covers orbital data centres; critics object.",
+     "Reuters", "OFFICIAL"),
     ("SPACE", "TIANGONG", (15, 42, 74), "astro",
      "First Pakistani astronaut reaches Tiangong",
-     "Muhammad Zeeshan Ali is the first foreign national aboard."),
+     "Muhammad Zeeshan Ali is the first foreign national aboard.",
+     "Xinhua", "OFFICIAL"),
     ("POLITICS", "PYONGYANG", (91, 70, 54), "flag",
      "N. Korea expels Swiss envoy",
-     "Pyongyang orders the Swiss office to close."),
+     "Pyongyang orders the Swiss office to close.",
+     "Arirang", "REPORTED"),
     ("POLITICS", "BRUSSELS", (91, 70, 54), "stars",
      "EU leaders split over \u20ac2tn budget",
-     "A \u20ac45bn loan for Ukraine is at stake in Brussels."),
+     "A \u20ac45bn loan for Ukraine is at stake in Brussels.",
+     "Reuters", "REPORTED"),
     ("CONFLICT", "PYONGYANG", (140, 29, 24), "nuke",
      "Kim vows wider tactical nuclear push",
-     "North Korea's leader tours nuclear sites, rejects talks."),
+     "North Korea's leader tours nuclear sites, rejects talks.",
+     "KCNA", "OFFICIAL"),
     ("TRANSPORT", "LONDON", (91, 70, 54), "train",
      "London Tube strike halts lines",
-     "RMT drivers walk out at noon in a four-day-week row."),
+     "RMT drivers walk out at noon in a four-day-week row.",
+     "Reuters", "OFFICIAL"),
     ("HEALTH", "KINSHASA", (14, 107, 107), "virus",
      "Ebola cases pass 12,000 in DR Congo",
-     "The worst outbreak yet; fighting displaces medics."),
+     "The worst outbreak yet; fighting displaces medics.",
+     "Reuters", "CONFIRMED"),
     ("POLITICS", "JERUSALEM", (91, 70, 54), "scales",
      "Judges: drop Netanyahu bribery charge",
-     "Court urges a rethink; Netanyahu demands an end."),
+     "Court urges a rethink; Netanyahu demands an end.",
+     "Reuters", "REPORTED"),
     ("CONFLICT", "KHARTOUM", (140, 29, 24), "drone",
      "Sudan drone attacks kill 15 in Blue Nile",
-     "At least 15 dead in strikes on the restive state."),
+     "At least 15 dead in strikes on the restive state.",
+     "Reuters", "REPORTED"),
     ("CONFLICT", "GAZA", (140, 29, 24), "burst",
      "Gaza strikes kill Hamas security chief",
-     "Israeli strikes kill 16 in a day despite ceasefire."),
+     "Israeli strikes kill 16 in a day despite ceasefire.",
+     "Al Jazeera", "REPORTED"),
     ("TECH", "SANTA CLARA", (74, 44, 109), "chip",
      "Huang returns as Nvidia chief",
-     "Jensen Huang is back as US lawmakers probe chips."),
+     "Jensen Huang is back as US lawmakers probe chips.",
+     "Reuters", "CONFIRMED"),
     ("ENERGY", "DUBAI", (179, 84, 30), "ship",
      "Explosion near tanker west of Dubai",
-     "UKMTO reports a blast; crew safe, vessel undamaged."),
+     "UKMTO reports a blast; crew safe, vessel undamaged.",
+     "UKMTO", "OFFICIAL"),
     ("ENERGY", "LONDON", (179, 84, 30), "bolt",
      "UK energy bills to rise 26% in January",
-     "Ofgem lifts the cap; a typical bill hits \u00a32,166."),
+     "Ofgem lifts the cap; a typical bill hits \u00a32,166.",
+     "Ofgem", "OFFICIAL"),
     ("SPACE", "PARIS", (15, 42, 74), "rock",
      "Hera images show Dimorphos crater",
-     "ESA reveals a stadium-sized crater from the DART hit."),
+     "ESA reveals a stadium-sized crater from the DART hit.",
+     "ESA", "OFFICIAL"),
     ("POLITICS", "SHANGHAI", (91, 70, 54), "probe",
      "China probes Shanghai party chief",
-     "Chen Jining investigated in a widening graft drive."),
+     "Chen Jining investigated in a widening graft drive.",
+     "Reuters", "OFFICIAL"),
     ("LABOUR", "DHAKA", (20, 83, 45), "mega",
      "Bangladesh garment protests flare",
-     "Police fire tear gas; 360 factories shut in unrest."),
+     "Police fire tear gas; 360 factories shut in unrest.",
+     "Reuters", "CONFIRMED"),
     ("MIGRATION", "LONDON", (20, 83, 45), "people",
      "UK net migration falls to 77,000",
-     "Lowest since 1997 outside the pandemic, figures show."),
+     "Lowest since 1997 outside the pandemic, figures show.",
+     "Reuters", "OFFICIAL"),
 ]
 
 BRIEF = [
@@ -202,6 +226,25 @@ STATS = [
 DATECHECK = ("All 38 stories are from Thursday 26 November 2026. Kept out "
              "as other days: Pitt\u2013Jolie deal, birthright ruling, "
              "Poland no-fly plan, Murmansk sacking \u2014 all 25 Nov.")
+
+# The day in UTC: only events with a verifiable UTC time on 26 Nov make
+# the strip. BoK announced ~01:00 GMT (Reuters); the ONS figures were
+# published at 09:30 (ONS release); the Tube strike starts at noon GMT
+# (Reuters). Everything else on the page has no solid UTC hour, so the
+# strip stays short rather than padded with guesses.
+TIMELINE = [
+    ("01:00", "Bank of Korea lifts rate to 3.25%"),
+    ("09:30", "ONS: UK net migration falls to 77,000"),
+    ("12:00", "London Tube strike begins at noon"),
+]
+
+# Status tags: OFFICIAL only for an official statement or announcement,
+# CONFIRMED where the fact is independently confirmed, REPORTED otherwise.
+STATUS_COLORS = {
+    "OFFICIAL": (140, 29, 24),
+    "CONFIRMED": (20, 83, 45),
+    "REPORTED": (91, 70, 54),
+}
 
 # Numbered dots on the world map: (lon, lat, number, label).
 DOTS = [
@@ -494,15 +537,15 @@ CONTINENTS = [
 def draw_masthead(d):
     d.rectangle([24, 14, 1000, 16], fill=INK)
     title = "THE DAILY GLOBE"
-    fnt = font(SERIF_B, 56)
+    fnt = font(SERIF_B, 50)
     tw = fnt.getlength(title)
-    d.text(((W - tw) / 2, 22), title, font=fnt, fill=INK)
+    d.text(((W - tw) / 2, 20), title, font=fnt, fill=INK)
     sub = "THURSDAY, 26 NOVEMBER 2026  \u2022  THE WORLD IN ONE DAY  \u2022  38 STORIES"
     fnt2 = font(SANS_B, 17)
     tw2 = fnt2.getlength(sub)
-    d.text(((W - tw2) / 2, 82), sub, font=fnt2, fill=RED)
-    d.rectangle([24, 104, 1000, 108], fill=INK)
-    d.rectangle([24, 110, 1000, 111], fill=INK)
+    d.text(((W - tw2) / 2, 76), sub, font=fnt2, fill=RED)
+    d.rectangle([24, 96, 1000, 100], fill=INK)
+    d.rectangle([24, 102, 1000, 103], fill=INK)
 
 
 def draw_bar_chart(d, x, y, w, h):
@@ -560,13 +603,41 @@ def draw_lead_visual(d, kind, x, y, w, h):
         return
 
 
+def status_pill_width(st):
+    return int(font(SANS_B, 8).getlength(st)) + 10
+
+
+def draw_status_pill(d, st, x, y):
+    """Small white-on-dark status chip; x, y = top-left of the pill."""
+    fnt = font(SANS_B, 8)
+    pw = status_pill_width(st)
+    d.rounded_rectangle([x, y, x + pw, y + 13], radius=6,
+                        fill=STATUS_COLORS[st])
+    tw = fnt.getlength(st)
+    d.text((x + (pw - tw) / 2, y + 2), st, font=fnt, fill=WHITE)
+    return pw
+
+
+def draw_tagline(d, tx, ty, tw, tag, place, color, src, tag_size=10,
+                 src_size=9):
+    """Tag + place left, source right-aligned, one line."""
+    d.text((tx, ty), f"{tag} \u2022 {place}", font=font(SANS_B, tag_size),
+           fill=color)
+    if src:
+        fnt = font(SANS, src_size)
+        sw = fnt.getlength(src)
+        d.text((tx + tw - sw, ty), src, font=fnt, fill=GREY)
+
+
 def draw_lead(d, lead, x, y, w, h):
     d.rectangle([x, y, x + w, y + h], fill=WHITE, outline=RULE, width=1)
-    vh = 66 if lead["kind"] != "tariffs" else 78
+    vh = 60 if lead["kind"] != "tariffs" else 72
     draw_lead_visual(d, lead["kind"], x + 1, y + 1, w - 2, vh)
+    pw = status_pill_width(lead["st"])
+    draw_status_pill(d, lead["st"], x + w - 6 - pw, y + vh - 19)
     ty = y + vh + 8
-    tag = f"{lead['tag']} \u2022 {lead['place']}"
-    d.text((x + 10, ty), tag, font=font(SANS_B, 11), fill=lead["color"])
+    draw_tagline(d, x + 10, ty, w - 20, lead["tag"], lead["place"],
+                 lead["color"], lead["src"], tag_size=11, src_size=10)
     ty += 16
     ty = draw_fitted(d, (x + 10, ty), lead["head"], SERIF_B, 19, w - 20, 2,
                      tag="lead:" + lead["tag"])
@@ -583,7 +654,7 @@ def _blend(color, f=0.6):
     return tuple(int(c + (255 - c) * f) for c in color)
 
 
-def draw_mini_scene(d, kind, color, x, y, w, h):
+def draw_mini_scene(d, kind, color, x, y, w, h, st=None):
     """Small drawn scene for a grid card: coloured sky, ground, sun and a
     white pictogram, with a couple of shapes per subject."""
     d.rectangle([x, y, x + w, y + h], fill=color)
@@ -608,17 +679,20 @@ def draw_mini_scene(d, kind, color, x, y, w, h):
         d.ellipse([x + w // 2 - 10, gy - 14, x + w // 2 + 10, gy + 6],
                   fill=(240, 190, 80))
     ICONS[kind](d, x + (w - 40) // 2, y + (h - 40) // 2 - 4, 40)
+    if st:
+        pw = status_pill_width(st)
+        draw_status_pill(d, st, x + (w - pw) // 2, y + h - 16)
 
 
 def draw_card(d, item, x, y, w, h):
-    tag, place, color, kind, head, summ = item
+    tag, place, color, kind, head, summ, src, st = item
     d.rectangle([x, y, x + w, y + h], fill=WHITE, outline=RULE, width=1)
     sw = 64
-    draw_mini_scene(d, kind, color, x + 1, y + 1, sw, h - 2)
+    draw_mini_scene(d, kind, color, x + 1, y + 1, sw, h - 2, st)
     tx = x + sw + 8
     tw = w - sw - 16
-    d.text((tx, y + 5), f"{tag} \u2022 {place}", font=font(SANS_B, 10),
-           fill=color)
+    draw_tagline(d, tx, y + 5, tw, tag, place, color, src, tag_size=9,
+                 src_size=9)
     ty = draw_fitted(d, (tx, y + 19), head, SERIF_B, 13, tw, 2,
                      tag="card:" + tag)
     draw_fitted(d, (tx, ty + 2), summ, SANS, 10, tw, 2,
@@ -670,7 +744,7 @@ def draw_brief(d, x, y, w, h):
     for i, (_tag, line) in enumerate(BRIEF):
         col, row = divmod(i, 6)
         bx = x + 10 + col * (colw + 4)
-        by = y + 36 + row * 16
+        by = y + 34 + row * 15
         d.text((bx, by), f"{i + 1}.", font=font(SANS_B, 11), fill=RED)
         draw_fitted(d, (bx + 18, by), line, SANS, 11, colw - 22, 1,
                     tag="brief")
@@ -683,12 +757,30 @@ def draw_stat_strip(d, x, y, w, h):
         cx = x + i * cw
         if i:
             d.line([cx, y + 6, cx, y + h - 6], fill=(210, 205, 195), width=1)
-        f1 = font(SERIF_B, 20)
+        f1 = font(SERIF_B, 19)
         tw = f1.getlength(num)
-        d.text((cx + (cw - tw) / 2, y + 4), num, font=f1, fill=RED)
-        f2 = font(SANS, 10)
+        d.text((cx + (cw - tw) / 2, y + 3), num, font=f1, fill=RED)
+        f2 = font(SANS, 9)
         tw2 = f2.getlength(label)
-        d.text((cx + (cw - tw2) / 2, y + 28), label, font=f2, fill=GREY)
+        d.text((cx + (cw - tw2) / 2, y + 26), label, font=f2, fill=GREY)
+
+
+def draw_timeline(d, x, y, w, h):
+    d.rectangle([x, y, x + w, y + h], fill=WHITE, outline=RULE, width=1)
+    tw_ = 108
+    d.text((x + 12, y + 5), "THE DAY", font=font(SANS_B, 11), fill=RED)
+    d.text((x + 12, y + 19), "IN UTC", font=font(SANS_B, 11), fill=RED)
+    d.line([x + tw_, y + 6, x + tw_, y + h - 6], fill=(210, 205, 195),
+           width=1)
+    cw = (w - tw_) // len(TIMELINE)
+    for i, (t, label) in enumerate(TIMELINE):
+        cx = x + tw_ + i * cw
+        if i:
+            d.line([cx, y + 6, cx, y + h - 6], fill=(210, 205, 195),
+                   width=1)
+        d.text((cx + 12, y + 4), t, font=font(SERIF_B, 13), fill=RED)
+        draw_fitted(d, (cx + 12, y + 21), label, SANS, 10, cw - 24, 1,
+                    tag="timeline")
 
 
 def draw_datecheck(d, x, y, w, h):
@@ -704,24 +796,27 @@ def build():
     d = ImageDraw.Draw(img)
     draw_masthead(d)
     # lead band
-    draw_lead(d, LEADS[0], 24, 116, 470, 172)
-    draw_lead(d, LEADS[1], 502, 116, 238, 172)
-    draw_lead(d, LEADS[2], 748, 116, 228, 172)
+    draw_lead(d, LEADS[0], 24, 112, 470, 160)
+    draw_lead(d, LEADS[1], 502, 112, 238, 160)
+    draw_lead(d, LEADS[2], 748, 112, 228, 160)
     # numbers strip
-    draw_stat_strip(d, 24, 296, 976, 40)
+    draw_stat_strip(d, 24, 280, 976, 38)
     # grid: 4 columns x 6 rows, every card illustrated
-    cw, ch, gap = 238, 80, 8
+    cw, ch, gap = 238, 78, 8
     for i, item in enumerate(GRID):
         cx = 24 + (i % 4) * (cw + gap)
-        cy = 344 + (i // 4) * (ch + 6)
+        cy = 326 + (i // 4) * (ch + 5)
         draw_card(d, item, cx, cy, cw, ch)
+    # the day in UTC
+    draw_timeline(d, 24, 825, 976, 37)
     # bottom band: shrunken map, date check, briefs
-    draw_map(d, 24, 860, 300, 132)
-    draw_datecheck(d, 332, 860, 190, 132)
-    draw_brief(d, 530, 860, 470, 132)
+    draw_map(d, 24, 868, 300, 124)
+    draw_datecheck(d, 332, 868, 190, 124)
+    draw_brief(d, 530, 868, 470, 124)
     # footer
     foot = ("All events of Thursday 26 November 2026  \u2022  Sources: "
-            "Reuters, BBC, AP, AFP, CNBC, Al Jazeera")
+            "Reuters, CNN, CNBC, Xinhua, Arirang, KCNA, Al Jazeera, "
+            "UKMTO, Ofgem, ESA")
     fnt = font(SANS, 11)
     tw = fnt.getlength(foot)
     d.text(((W - tw) / 2, 1002), foot, font=fnt, fill=GREY)
