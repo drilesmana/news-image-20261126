@@ -78,8 +78,8 @@ def draw_fitted(d, xy, text, path, size, width, max_lines, fill=INK,
 
 
 # ---------------------------------------------------------------- stories
-# Headlines are written short on purpose: card headlines <= ~54 chars,
-# summaries <= ~68 chars, so each fits its box whole. Never truncate.
+# Headlines are written short on purpose: card headlines <= ~44 chars,
+# summaries <= ~60 chars, so each fits its box whole. Never truncate.
 LEADS = [
     dict(tag="TRADE", place="WASHINGTON", color=(31, 78, 121),
          head="US proposes tariffs on 14 partners",
@@ -101,64 +101,107 @@ LEADS = [
 GRID = [
     ("DISASTER", "CAIRO", (179, 84, 30), "flame",
      "Tanker fire kills 31 on Cairo ring road",
-     "A fuel tanker overturned and burned on the Giza ring road; 21 hurt."),
+     "A fuel tanker overturned and burned; 21 hurt."),
     ("CONFLICT", "KYIV", (140, 29, 24), "jet",
      "Ukraine hits five jets at Russian airbase",
-     "Kyiv says it struck Savasleyka; Russia fired missiles at a Kyiv mall."),
+     "Kyiv says it struck Savasleyka; Russia hit a mall."),
+    ("MARKETS", "SEOUL", (20, 83, 45), "bank",
+     "Bank of Korea lifts rate to 3.25%",
+     "Third hike of 2026; AI export boom fuels growth."),
     ("CONFLICT", "TEHRAN", (140, 29, 24), "exit",
      "US tells citizens to leave Iran",
-     "Washington warns hostilities could escalate fast as Israel readies a strike."),
+     "Washington warns of escalation as Israel readies a strike."),
     ("MARKETS", "NEW YORK", (20, 83, 45), "down",
      "Nasdaq nears bear market in AI sell-off",
-     "AI-linked stocks slide again; Nvidia falls as S&P warns on its rating."),
+     "AI stocks slide again; Nvidia falls, S&P warns."),
+    ("TRANSPORT", "OSLO", (91, 70, 54), "jet",
+     "Norse Atlantic suspends all flights",
+     "Cash-strapped airline seeks funds; bankruptcy looms."),
     ("TECH", "BROOKLYN", (74, 44, 109), "gavel",
      "Huawei guilty on 10 of 12 counts",
-     "A US jury convicts Huawei of trade-secret theft, bank and wire fraud."),
+     "US jury convicts it of trade-secret theft and fraud."),
     ("SPACE", "WASHINGTON", (15, 42, 74), "sat",
      "FCC clears SpaceX plan for 1m satellites",
-     "Approval covers orbital data centres; Amazon and astronomers object."),
+     "Approval covers orbital data centres; critics object."),
     ("SPACE", "TIANGONG", (15, 42, 74), "astro",
      "First Pakistani astronaut reaches Tiangong",
-     "Muhammad Zeeshan Ali is the first foreign national aboard China's station."),
+     "Muhammad Zeeshan Ali is the first foreign national aboard."),
+    ("POLITICS", "PYONGYANG", (91, 70, 54), "flag",
+     "N. Korea expels Swiss envoy",
+     "Pyongyang orders the Swiss office to close."),
     ("POLITICS", "BRUSSELS", (91, 70, 54), "stars",
      "EU leaders split over \u20ac2tn budget",
-     "A \u20ac45bn loan for Ukraine is also at stake as leaders meet in Brussels."),
+     "A \u20ac45bn loan for Ukraine is at stake in Brussels."),
     ("CONFLICT", "PYONGYANG", (140, 29, 24), "nuke",
      "Kim vows wider tactical nuclear push",
-     "North Korea's leader tours nuclear sites and rejects disarmament."),
+     "North Korea's leader tours nuclear sites, rejects talks."),
+    ("TRANSPORT", "LONDON", (91, 70, 54), "train",
+     "London Tube strike halts lines",
+     "RMT drivers walk out at noon in a four-day-week row."),
     ("HEALTH", "KINSHASA", (14, 107, 107), "virus",
      "Ebola cases pass 12,000 in DR Congo",
-     "The worst outbreak yet; fighting in the east displaces health workers."),
+     "The worst outbreak yet; fighting displaces medics."),
     ("POLITICS", "JERUSALEM", (91, 70, 54), "scales",
      "Judges: drop Netanyahu bribery charge",
-     "Court urges prosecutors to rethink the case; Netanyahu demands an end."),
+     "Court urges a rethink; Netanyahu demands an end."),
+    ("CONFLICT", "KHARTOUM", (140, 29, 24), "drone",
+     "Sudan drone attacks kill 15 in Blue Nile",
+     "At least 15 dead in strikes on the restive state."),
     ("CONFLICT", "GAZA", (140, 29, 24), "burst",
      "Gaza strikes kill Hamas security chief",
-     "Israeli strikes kill 16 in a day despite a year-old ceasefire."),
+     "Israeli strikes kill 16 in a day despite ceasefire."),
     ("TECH", "SANTA CLARA", (74, 44, 109), "chip",
      "Huang returns as Nvidia chief",
-     "Jensen Huang is back as CEO as US lawmakers probe chip security risks."),
+     "Jensen Huang is back as US lawmakers probe chips."),
+    ("ENERGY", "DUBAI", (179, 84, 30), "ship",
+     "Explosion near tanker west of Dubai",
+     "UKMTO reports a blast; crew safe, vessel undamaged."),
     ("ENERGY", "LONDON", (179, 84, 30), "bolt",
      "UK energy bills to rise 26% in January",
-     "Ofgem lifts the price cap; a typical bill rises to \u00a32,166 a year."),
+     "Ofgem lifts the cap; a typical bill hits \u00a32,166."),
+    ("SPACE", "PARIS", (15, 42, 74), "rock",
+     "Hera images show Dimorphos crater",
+     "ESA reveals a stadium-sized crater from the DART hit."),
     ("POLITICS", "SHANGHAI", (91, 70, 54), "probe",
      "China probes Shanghai party chief",
-     "Politburo member Chen Jining is investigated in a widening graft drive."),
+     "Chen Jining investigated in a widening graft drive."),
+    ("LABOUR", "DHAKA", (20, 83, 45), "mega",
+     "Bangladesh garment protests flare",
+     "Police fire tear gas; 360 factories shut in unrest."),
     ("MIGRATION", "LONDON", (20, 83, 45), "people",
      "UK net migration falls to 77,000",
-     "Lowest since 1997 outside the pandemic, official figures show."),
+     "Lowest since 1997 outside the pandemic, figures show."),
 ]
 
 BRIEF = [
-    "Spain votes Sunday; polls put the right ahead",
-    "S. Africa court scraps Ramaphosa impeachment report",
-    "Indonesia mine flood kills 13 in West Java",
-    "Hong Kong marks a year since the fire that killed 168",
-    "Poundland collapses; 11,000 jobs at risk",
-    "Liverpool 3\u20130 Club Brugge; Lille stun Bayern 2\u20131",
-    "Jennifer Barreto wins Miss Universe 2026",
-    "Duran Duran guitarist Andy Taylor dies at 65",
+    ("VOTE", "Spain votes Sunday; right leads polls"),
+    ("COURT", "S. Africa court scraps Ramaphosa report"),
+    ("FLOOD", "Indonesia mine flood kills 13"),
+    ("MEMORIAL", "Hong Kong marks year since fire killed 168"),
+    ("RETAIL", "Poundland collapses; 11,000 jobs at risk"),
+    ("SPORT", "Liverpool 3\u20130 Club Brugge; Lille stun Bayern"),
+    ("CULTURE", "Jennifer Barreto wins Miss Universe 2026"),
+    ("MUSIC", "Duran Duran guitarist Andy Taylor dies, 65"),
+    ("HEALTH", "Pig-kidney patient a year off dialysis"),
+    ("STRIKE", "Iran drone attack on Kuwait kills two"),
+    ("BORDER", "Iraq takes over Kurdistan border posts"),
 ]
+
+# Key figures of the day, all from the stories above.
+STATS = [
+    ("14", "tariff partners"),
+    ("100th", "Macy's parade"),
+    ("31", "killed, Cairo fire"),
+    ("12,000+", "Ebola cases"),
+    ("1m", "satellites cleared"),
+    ("77,000", "UK net migration"),
+]
+
+# Stories that look like 26 Nov news but are from another day: named here
+# so the date scope is explicit.
+DATECHECK = ("All 38 stories are from Thursday 26 November 2026. Kept out "
+             "as other days: Pitt\u2013Jolie deal, birthright ruling, "
+             "Poland no-fly plan, Murmansk sacking \u2014 all 25 Nov.")
 
 # Numbered dots on the world map: (lon, lat, number, label).
 DOTS = [
@@ -332,12 +375,87 @@ def icon_balloon(d, x, y, s):
     d.rectangle([cx - 5, cy + 10, cx + 5, cy + 13], outline=WHITE, width=2)
 
 
+def icon_bank(d, x, y, s):
+    cx, cy = x + s // 2, y + s // 2
+    _poly(d, [(cx - 12, cy - 4), (cx, cy - 12), (cx + 12, cy - 4)], WHITE)
+    for dx in (-9, 0, 9):
+        d.rectangle([cx + dx - 2, cy - 2, cx + dx + 2, cy + 9], fill=WHITE)
+    d.rectangle([cx - 13, cy + 9, cx + 13, cy + 12], fill=WHITE)
+
+
+def icon_train(d, x, y, s):
+    cx, cy = x + s // 2, y + s // 2
+    d.rectangle([cx - 10, cy - 11, cx + 10, cy + 8], outline=WHITE, width=2)
+    d.rectangle([cx - 7, cy - 8, cx - 1, cy - 2], fill=WHITE)
+    d.rectangle([cx + 1, cy - 8, cx + 7, cy - 2], fill=WHITE)
+    d.ellipse([cx - 8, cy + 7, cx - 3, cy + 12], fill=WHITE)
+    d.ellipse([cx + 3, cy + 7, cx + 8, cy + 12], fill=WHITE)
+
+
+def icon_ship(d, x, y, s):
+    cx, cy = x + s // 2, y + s // 2
+    _poly(d, [(cx - 12, cy + 2), (cx + 12, cy + 2), (cx + 8, cy + 11),
+              (cx - 8, cy + 11)], WHITE)
+    d.rectangle([cx - 9, cy - 7, cx - 2, cy + 1], fill=WHITE)
+    d.rectangle([cx, cy - 7, cx + 7, cy + 1], fill=WHITE)
+    d.rectangle([cx + 8, cy - 11, cx + 11, cy + 1], fill=WHITE)
+
+
+def icon_rock(d, x, y, s):
+    cx, cy = x + s // 2, y + s // 2
+    d.ellipse([cx - 11, cy - 11, cx + 11, cy + 11], fill=WHITE)
+    d.ellipse([cx - 5, cy - 7, cx + 3, cy + 1], outline=INK, width=2)
+    d.ellipse([cx + 2, cy + 3, cx + 8, cy + 9], outline=INK, width=2)
+
+
+def icon_mega(d, x, y, s):
+    cx, cy = x + s // 2, y + s // 2
+    _poly(d, [(cx - 11, cy - 4), (cx + 2, cy - 11), (cx + 2, cy + 9),
+              (cx - 11, cy + 3)], WHITE)
+    d.polygon([(cx + 2, cy - 11), (cx + 12, cy - 6), (cx + 12, cy + 4),
+               (cx + 2, cy + 9)], outline=WHITE, width=2)
+    d.rectangle([cx - 5, cy + 6, cx - 1, cy + 12], fill=WHITE)
+
+
+def icon_cross(d, x, y, s):
+    cx, cy = x + s // 2, y + s // 2
+    d.rectangle([cx - 3, cy - 12, cx + 3, cy + 12], fill=WHITE)
+    d.rectangle([cx - 12, cy - 3, cx + 12, cy + 3], fill=WHITE)
+
+
+def icon_flag(d, x, y, s):
+    cx, cy = x + s // 2, y + s // 2
+    d.line([cx - 8, cy - 12, cx - 8, cy + 12], fill=WHITE, width=2)
+    _poly(d, [(cx - 8, cy - 12), (cx + 11, cy - 8), (cx - 8, cy - 3)],
+          WHITE)
+
+
+def icon_gate(d, x, y, s):
+    cx, cy = x + s // 2, y + s // 2
+    d.rectangle([cx - 12, cy - 11, cx - 9, cy + 11], fill=WHITE)
+    d.rectangle([cx + 9, cy - 11, cx + 12, cy + 11], fill=WHITE)
+    d.rectangle([cx - 12, cy - 8, cx + 12, cy - 5], fill=WHITE)
+    d.rectangle([cx - 12, cy + 5, cx + 12, cy + 8], fill=WHITE)
+
+
+def icon_drone(d, x, y, s):
+    cx, cy = x + s // 2, y + s // 2
+    d.ellipse([cx - 5, cy - 3, cx + 5, cy + 3], fill=WHITE)
+    for dx, dy in ((-10, -8), (10, -8), (-10, 8), (10, 8)):
+        d.ellipse([cx + dx - 4, cy + dy - 2, cx + dx + 4, cy + dy + 2],
+                  outline=WHITE, width=2)
+        d.line([cx, cy, cx + dx, cy + dy], fill=WHITE, width=2)
+
+
 ICONS = dict(flame=icon_flame, jet=icon_jet, exit=icon_exit, down=icon_down,
              gavel=icon_gavel, sat=icon_sat, astro=icon_astro,
              stars=icon_stars, nuke=icon_nuke, virus=icon_virus,
              scales=icon_scales, burst=icon_burst, chip=icon_chip,
              bolt=icon_bolt, probe=icon_probe, people=icon_people,
-             missile=icon_missile, balloon=icon_balloon)
+             missile=icon_missile, balloon=icon_balloon, bank=icon_bank,
+             train=icon_train, ship=icon_ship, rock=icon_rock,
+             mega=icon_mega, cross=icon_cross, flag=icon_flag,
+             gate=icon_gate, drone=icon_drone)
 
 
 # ---------------------------------------------------------------- map
@@ -379,7 +497,7 @@ def draw_masthead(d):
     fnt = font(SERIF_B, 56)
     tw = fnt.getlength(title)
     d.text(((W - tw) / 2, 22), title, font=fnt, fill=INK)
-    sub = "THURSDAY, 26 NOVEMBER 2026  \u2022  THE WORLD IN ONE DAY  \u2022  27 STORIES"
+    sub = "THURSDAY, 26 NOVEMBER 2026  \u2022  THE WORLD IN ONE DAY  \u2022  38 STORIES"
     fnt2 = font(SANS_B, 17)
     tw2 = fnt2.getlength(sub)
     d.text(((W - tw2) / 2, 82), sub, font=fnt2, fill=RED)
@@ -444,31 +562,66 @@ def draw_lead_visual(d, kind, x, y, w, h):
 
 def draw_lead(d, lead, x, y, w, h):
     d.rectangle([x, y, x + w, y + h], fill=WHITE, outline=RULE, width=1)
-    vh = 72 if lead["kind"] != "tariffs" else 84
+    vh = 66 if lead["kind"] != "tariffs" else 78
     draw_lead_visual(d, lead["kind"], x + 1, y + 1, w - 2, vh)
     ty = y + vh + 8
     tag = f"{lead['tag']} \u2022 {lead['place']}"
     d.text((x + 10, ty), tag, font=font(SANS_B, 11), fill=lead["color"])
     ty += 16
-    ty = draw_fitted(d, (x + 10, ty), lead["head"], SERIF_B, 20, w - 20, 2,
+    ty = draw_fitted(d, (x + 10, ty), lead["head"], SERIF_B, 19, w - 20, 2,
                      tag="lead:" + lead["tag"])
     ty += 4
-    draw_fitted(d, (x + 10, ty), lead["summ"], SANS, 12, w - 20, 2,
+    draw_fitted(d, (x + 10, ty), lead["summ"], SANS, 11, w - 20, 2,
                 tag="lead-summ:" + lead["tag"])
+
+
+def _shade(color, f):
+    return tuple(max(0, min(255, int(c * f))) for c in color)
+
+
+def _blend(color, f=0.6):
+    return tuple(int(c + (255 - c) * f) for c in color)
+
+
+def draw_mini_scene(d, kind, color, x, y, w, h):
+    """Small drawn scene for a grid card: coloured sky, ground, sun and a
+    white pictogram, with a couple of shapes per subject."""
+    d.rectangle([x, y, x + w, y + h], fill=color)
+    d.ellipse([x + w - 26, y + 8, x + w - 8, y + 26], fill=_blend(color))
+    gy = y + h - 20
+    d.rectangle([x, gy, x + w, y + h], fill=_shade(color, 0.55))
+    d.line([x, gy, x + w, gy], fill=_blend(color, 0.35), width=1)
+    if kind == "flame":
+        d.ellipse([x + 8, gy - 6, x + w - 8, gy + 10], fill=(230, 140, 40))
+    elif kind == "jet":
+        d.ellipse([x + 6, y + 12, x + 26, y + 22], fill=_blend(color, 0.7))
+        d.ellipse([x + 30, y + 20, x + 52, y + 30], fill=_blend(color, 0.7))
+    elif kind == "sat":
+        for px, py in [(x + 10, y + 12), (x + 24, y + 8), (x + 44, y + 16)]:
+            d.ellipse([px - 2, py - 2, px + 2, py + 2], fill=WHITE)
+    elif kind == "astro":
+        d.ellipse([x + 6, y + 8, x + w - 6, y + 34], outline=WHITE, width=1)
+    elif kind == "ship":
+        d.line([x + 6, gy - 8, x + w - 6, gy - 8], fill=WHITE, width=2)
+        d.line([x + 10, gy - 4, x + w - 10, gy - 4], fill=WHITE, width=2)
+    elif kind in ("burst", "missile"):
+        d.ellipse([x + w // 2 - 10, gy - 14, x + w // 2 + 10, gy + 6],
+                  fill=(240, 190, 80))
+    ICONS[kind](d, x + (w - 40) // 2, y + (h - 40) // 2 - 4, 40)
 
 
 def draw_card(d, item, x, y, w, h):
     tag, place, color, kind, head, summ = item
     d.rectangle([x, y, x + w, y + h], fill=WHITE, outline=RULE, width=1)
-    bh = 38
-    d.rectangle([x, y, x + w, y + bh], fill=color)
-    ICONS[kind](d, x, y, bh)
-    d.text((x + 44, y + 5), tag, font=font(SANS_B, 12), fill=WHITE)
-    d.text((x + 44, y + 20), place, font=font(SANS, 11), fill=(235, 230, 220))
-    ty = y + bh + 7
-    ty = draw_fitted(d, (x + 10, ty), head, SERIF_B, 15, w - 20, 2,
+    sw = 64
+    draw_mini_scene(d, kind, color, x + 1, y + 1, sw, h - 2)
+    tx = x + sw + 8
+    tw = w - sw - 16
+    d.text((tx, y + 5), f"{tag} \u2022 {place}", font=font(SANS_B, 10),
+           fill=color)
+    ty = draw_fitted(d, (tx, y + 19), head, SERIF_B, 13, tw, 2,
                      tag="card:" + tag)
-    draw_fitted(d, (x + 10, ty + 2), summ, SANS, 11, w - 20, 2,
+    draw_fitted(d, (tx, ty + 2), summ, SANS, 10, tw, 2,
                 tag="card-summ:" + tag)
 
 
@@ -476,7 +629,7 @@ def draw_map(d, x, y, w, h):
     d.rectangle([x, y, x + w, y + h], fill=WHITE, outline=RULE, width=1)
     d.text((x + 10, y + 8), "WHERE THE DAY HAPPENED",
            font=font(SANS_B, 12), fill=INK)
-    mx, my, mw, mh = x + 8, y + 30, w - 16, h - 54
+    mx, my, mw, mh = x + 8, y + 30, w - 16, h - 62
     # Aspect-preserving equirectangular projection: lon -180..180,
     # lat -55..83, centred in the box so continents keep their shape.
     s = min(mw / 360, mh / 138)
@@ -498,12 +651,14 @@ def draw_map(d, x, y, w, h):
                   outline=WHITE, width=1)
         tw = fnt.getlength(num)
         d.text((px - tw / 2, py - 8), num, font=fnt, fill=WHITE)
-    key = ("1 Washington  \u2022  2 Riyadh  \u2022  3 New York  \u2022  4 Cairo"
-           "  \u2022  5 Kyiv  \u2022  6 Beijing  \u2022  7 London"
-           "  \u2022  8 Kinshasa")
-    kf = font(SANS, 10)
-    kw = kf.getlength(key)
-    d.text((x + (w - kw) / 2, y + h - 18), key, font=kf, fill=GREY)
+    kf = font(SANS, 9)
+    for i, kline in enumerate(("1 Washington  \u2022  2 Riyadh  \u2022  "
+                               "3 New York  \u2022  4 Cairo",
+                               "5 Kyiv  \u2022  6 Beijing  \u2022  7 London"
+                               "  \u2022  8 Kinshasa")):
+        kw = kf.getlength(kline)
+        d.text((x + (w - kw) / 2, y + h - 30 + i * 13), kline, font=kf,
+               fill=GREY)
 
 
 def draw_brief(d, x, y, w, h):
@@ -511,38 +666,65 @@ def draw_brief(d, x, y, w, h):
     d.text((x + 10, y + 8), "THE DAY IN BRIEF",
            font=font(SANS_B, 12), fill=INK)
     d.line([x + 10, y + 28, x + w - 10, y + 28], fill=RULE, width=1)
-    fnt = font(SANS, 12)
-    yy = y + 36
-    for i, line in enumerate(BRIEF, 1):
-        d.text((x + 10, yy), f"{i}.", font=font(SANS_B, 12), fill=RED)
-        draw_fitted(d, (x + 30, yy), line, SANS, 12, w - 42, 1,
+    colw = (w - 20) // 2
+    for i, (_tag, line) in enumerate(BRIEF):
+        col, row = divmod(i, 6)
+        bx = x + 10 + col * (colw + 4)
+        by = y + 36 + row * 16
+        d.text((bx, by), f"{i + 1}.", font=font(SANS_B, 11), fill=RED)
+        draw_fitted(d, (bx + 18, by), line, SANS, 11, colw - 22, 1,
                     tag="brief")
-        yy += 19
+
+
+def draw_stat_strip(d, x, y, w, h):
+    d.rectangle([x, y, x + w, y + h], fill=WHITE, outline=RULE, width=1)
+    cw = w // len(STATS)
+    for i, (num, label) in enumerate(STATS):
+        cx = x + i * cw
+        if i:
+            d.line([cx, y + 6, cx, y + h - 6], fill=(210, 205, 195), width=1)
+        f1 = font(SERIF_B, 20)
+        tw = f1.getlength(num)
+        d.text((cx + (cw - tw) / 2, y + 4), num, font=f1, fill=RED)
+        f2 = font(SANS, 10)
+        tw2 = f2.getlength(label)
+        d.text((cx + (cw - tw2) / 2, y + 28), label, font=f2, fill=GREY)
+
+
+def draw_datecheck(d, x, y, w, h):
+    d.rectangle([x, y, x + w, y + h], fill=WHITE, outline=RULE, width=1)
+    d.text((x + 10, y + 8), "DATE CHECK", font=font(SANS_B, 12), fill=RED)
+    d.line([x + 10, y + 28, x + w - 10, y + 28], fill=RULE, width=1)
+    draw_fitted(d, (x + 10, y + 34), DATECHECK, SANS, 10, w - 20, 6,
+                tag="datecheck")
 
 
 def build():
     img = Image.new("RGB", (W, H), PAPER)
     d = ImageDraw.Draw(img)
     draw_masthead(d)
-    # lead band: tariffs wide left, Riyadh + Macy's right
-    draw_lead(d, LEADS[0], 24, 118, 470, 182)
-    draw_lead(d, LEADS[1], 502, 118, 238, 182)
-    draw_lead(d, LEADS[2], 748, 118, 228, 182)
-    # grid: 4 columns x 4 rows
-    cw, ch, gap = 238, 116, 8
+    # lead band
+    draw_lead(d, LEADS[0], 24, 116, 470, 172)
+    draw_lead(d, LEADS[1], 502, 116, 238, 172)
+    draw_lead(d, LEADS[2], 748, 116, 228, 172)
+    # numbers strip
+    draw_stat_strip(d, 24, 296, 976, 40)
+    # grid: 4 columns x 6 rows, every card illustrated
+    cw, ch, gap = 238, 80, 8
     for i, item in enumerate(GRID):
         cx = 24 + (i % 4) * (cw + gap)
-        cy = 308 + (i // 4) * (ch + gap)
+        cy = 344 + (i // 4) * (ch + 6)
         draw_card(d, item, cx, cy, cw, ch)
-    # bottom band: map left, brief right
-    draw_map(d, 24, 800, 560, 192)
-    draw_brief(d, 592, 800, 384, 192)
+    # bottom band: shrunken map, date check, briefs
+    draw_map(d, 24, 860, 300, 132)
+    draw_datecheck(d, 332, 860, 190, 132)
+    draw_brief(d, 530, 860, 470, 132)
     # footer
     foot = ("All events of Thursday 26 November 2026  \u2022  Sources: "
             "Reuters, BBC, AP, AFP, CNBC, Al Jazeera")
     fnt = font(SANS, 11)
     tw = fnt.getlength(foot)
-    d.text(((W - tw) / 2, 1000), foot, font=fnt, fill=GREY)
+    d.text(((W - tw) / 2, 1002), foot, font=fnt, fill=GREY)
     return img
 
 
