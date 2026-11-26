@@ -81,112 +81,107 @@ def draw_fitted(d, xy, text, path, size, width, max_lines, fill=INK,
 # Headlines are written short on purpose: card headlines <= ~44 chars,
 # summaries <= ~60 chars, so each fits its box whole. Never truncate.
 LEADS = [
-    dict(tag="TRADE", place="WASHINGTON", color=(31, 78, 121),
-         head="US proposes tariffs on 14 partners",
-         summ="China faces up to 40%, India 25%, Japan 15%. Beijing, "
-              "Brussels and Delhi reject the plan.",
-         kind="tariffs", src="Reuters", st="OFFICIAL"),
-    dict(tag="CONFLICT", place="RIYADH", color=(140, 29, 24),
-         head="Missiles over Riyadh; Houthis hit Saudi refinery",
-         summ="Air defences down two ballistic missiles; oil climbs "
-              "toward $95 a barrel.",
-         kind="missile", src="CNN", st="REPORTED"),
-    dict(tag="SOCIETY", place="NEW YORK", color=(90, 70, 40),
-         head="Macy's 100th parade put off to Saturday",
-         summ="First weather delay in its history as a nor'easter "
-              "bears down on New York.",
-         kind="balloon", src="Reuters", st="OFFICIAL"),
+    dict(tag="MARKETS", place="SEOUL", color=(20, 83, 45),
+         head="Bank of Korea lifts rate to 3.25%",
+         summ="Third hike of 2026 as chip exports boom; growth "
+              "forecast up to 3.9%.",
+         kind="bars", src="Reuters", st="OFFICIAL"),
+    dict(tag="CONFLICT", place="KUWAIT", color=(140, 29, 24),
+         head="Iran drone attack kills two Italians",
+         summ="Two Rheinmetall technicians dead; Rome and Kuwait "
+              "confirm.",
+         kind="missile", src="Reuters", st="CONFIRMED"),
+    dict(tag="CONFLICT", place="BAGHDAD", color=(140, 29, 24),
+         head="Baghdad takes Kurd oil; thousands protest",
+         summ="Federal troops hold crossings and oil fields.",
+         kind="gate", src="AP", st="CONFIRMED"),
 ]
 
 GRID = [
-    ("DISASTER", "CAIRO", (179, 84, 30), "flame",
-     "Tanker fire kills 31 on Cairo ring road",
-     "A fuel tanker overturned and burned; 21 hurt.",
-     "Reuters", "CONFIRMED"),
-    ("CONFLICT", "KYIV", (140, 29, 24), "jet",
-     "Ukraine hits five jets at Russian airbase",
-     "Kyiv says it struck Savasleyka; Russia hit a mall.",
-     "Reuters", "REPORTED"),
-    ("MARKETS", "SEOUL", (20, 83, 45), "bank",
-     "Bank of Korea lifts rate to 3.25%",
-     "Third hike of 2026; AI export boom fuels growth.",
-     "Reuters", "OFFICIAL"),
-    ("CONFLICT", "TEHRAN", (140, 29, 24), "exit",
-     "US tells citizens to leave Iran",
-     "Washington warns of escalation as Israel readies a strike.",
-     "Reuters", "OFFICIAL"),
-    ("MARKETS", "NEW YORK", (20, 83, 45), "down",
-     "Nasdaq nears bear market in AI sell-off",
-     "AI stocks slide again; Nvidia falls, S&P warns.",
-     "CNBC", "CONFIRMED"),
     ("TRANSPORT", "OSLO", (91, 70, 54), "jet",
      "Norse Atlantic suspends all flights",
      "Cash-strapped airline seeks funds; bankruptcy looms.",
      "Reuters", "OFFICIAL"),
-    ("TECH", "BROOKLYN", (74, 44, 109), "gavel",
-     "Huawei guilty on 10 of 12 counts",
-     "US jury convicts it of trade-secret theft and fraud.",
-     "Reuters", "OFFICIAL"),
-    ("SPACE", "WASHINGTON", (15, 42, 74), "sat",
-     "FCC clears SpaceX plan for 1m satellites",
-     "Approval covers orbital data centres; critics object.",
-     "Reuters", "OFFICIAL"),
-    ("SPACE", "TIANGONG", (15, 42, 74), "astro",
-     "First Pakistani astronaut reaches Tiangong",
-     "Muhammad Zeeshan Ali is the first foreign national aboard.",
-     "Xinhua", "OFFICIAL"),
-    ("POLITICS", "PYONGYANG", (91, 70, 54), "flag",
-     "N. Korea expels Swiss envoy",
-     "Pyongyang orders the Swiss office to close.",
-     "Arirang", "REPORTED"),
+    ("ENERGY", "KHASAB", (179, 84, 30), "ship",
+     "Tankers hit mines off Khasab",
+     "IRGC says a supertanker with 2m+ barrels was hit.",
+     "Reuters", "REPORTED"),
+    ("CONFLICT", "KYIV", (140, 29, 24), "jet",
+     "Russian missiles hit Kyiv mall",
+     "Seven hurt, two serious, in overnight strikes.",
+     "Reuters", "CONFIRMED"),
+    ("TECH", "SANTA CLARA", (74, 44, 109), "chip",
+     "Nvidia halts AI server shipments",
+     "Halts AI server sales to four Asian states.",
+     "FT", "CONFIRMED"),
+    ("MARKETS", "DUBAI", (20, 83, 45), "down",
+     "Gulf shares muted as war spreads",
+     "Aramco up 0.7%; Abu Dhabi, Qatar dip.",
+     "Reuters", "CONFIRMED"),
     ("POLITICS", "BRUSSELS", (91, 70, 54), "stars",
      "EU leaders split over \u20ac2tn budget",
      "A \u20ac45bn loan for Ukraine is at stake in Brussels.",
      "Reuters", "REPORTED"),
-    ("CONFLICT", "PYONGYANG", (140, 29, 24), "nuke",
-     "Kim vows wider tactical nuclear push",
-     "North Korea's leader tours nuclear sites, rejects talks.",
-     "KCNA", "OFFICIAL"),
+    ("CONFLICT", "JAZAN", (140, 29, 24), "flame",
+     "Houthis hit Aramco's Jazan refinery",
+     "Coalition says it destroyed a launch pad.",
+     "Reuters", "REPORTED"),
+    ("HEALTH", "HAITI", (14, 107, 107), "cross",
+     "4.9m Haitians need health aid",
+     "WHO: only a quarter of clinics fully open.",
+     "WHO", "OFFICIAL"),
     ("TRANSPORT", "LONDON", (91, 70, 54), "train",
      "London Tube strike halts lines",
      "RMT drivers walk out at noon in a four-day-week row.",
      "Reuters", "OFFICIAL"),
+    ("MARKETS", "TOKYO", (20, 83, 45), "bank",
+     "Asian shares bounce after Wall St",
+     "Nikkei up 1.4%; Kospi gains 1%.",
+     "Reuters", "CONFIRMED"),
+    ("CONFLICT", "KRASNODAR", (140, 29, 24), "drone",
+     "Drones set Russian refinery ablaze",
+     "Distillation unit hit in Nov 26 attack.",
+     "Reuters", "REPORTED"),
+    ("CONFLICT", "PYONGYANG", (140, 29, 24), "nuke",
+     "N. Korea halts missile shipments",
+     "Kyiv: KN-23 deliveries to Russia paused.",
+     "Reuters", "REPORTED"),
     ("HEALTH", "KINSHASA", (14, 107, 107), "virus",
      "Ebola cases pass 12,000 in DR Congo",
      "The worst outbreak yet; fighting displaces medics.",
      "Reuters", "CONFIRMED"),
-    ("POLITICS", "JERUSALEM", (91, 70, 54), "scales",
-     "Judges: drop Netanyahu bribery charge",
-     "Court urges a rethink; Netanyahu demands an end.",
-     "Reuters", "REPORTED"),
-    ("CONFLICT", "KHARTOUM", (140, 29, 24), "drone",
-     "Sudan drone attacks kill 15 in Blue Nile",
-     "At least 15 dead in strikes on the restive state.",
-     "Reuters", "REPORTED"),
-    ("CONFLICT", "GAZA", (140, 29, 24), "burst",
-     "Gaza strikes kill Hamas security chief",
-     "Israeli strikes kill 16 in a day despite ceasefire.",
-     "Al Jazeera", "REPORTED"),
-    ("TECH", "SANTA CLARA", (74, 44, 109), "chip",
-     "Huang returns as Nvidia chief",
-     "Jensen Huang is back as US lawmakers probe chips.",
+    ("CONFLICT", "WEST BANK", (140, 29, 24), "exit",
+     "Settlers smash Palestinian homes",
+     "Two houses wrecked, defying a court order.",
      "Reuters", "CONFIRMED"),
-    ("ENERGY", "DUBAI", (179, 84, 30), "ship",
-     "Explosion near tanker west of Dubai",
-     "UKMTO reports a blast; crew safe, vessel undamaged.",
-     "UKMTO", "OFFICIAL"),
-    ("ENERGY", "LONDON", (179, 84, 30), "bolt",
-     "UK energy bills to rise 26% in January",
-     "Ofgem lifts the cap; a typical bill hits \u00a32,166.",
-     "Ofgem", "OFFICIAL"),
-    ("SPACE", "PARIS", (15, 42, 74), "rock",
-     "Hera images show Dimorphos crater",
-     "ESA reveals a stadium-sized crater from the DART hit.",
-     "ESA", "OFFICIAL"),
-    ("POLITICS", "SHANGHAI", (91, 70, 54), "probe",
-     "China probes Shanghai party chief",
-     "Chen Jining investigated in a widening graft drive.",
+    ("POLITICS", "BUCHAREST", (91, 70, 54), "flag",
+     "Romania charges far-right Simion",
+     "Accused of inciting violence at polls.",
      "Reuters", "OFFICIAL"),
+    ("POLITICS", "WASHINGTON", (91, 70, 54), "probe",
+     "Trump demands GDP data probe",
+     "Calls pre-midterm figures 'FAKE'.",
+     "Reuters", "OFFICIAL"),
+    ("CONFLICT", "GAZA", (140, 29, 24), "burst",
+     "IDF kills Hamas finance chief",
+     "Khaled Abu Nada dead in Deir al-Balah strike.",
+     "Reuters", "CONFIRMED"),
+    ("ENERGY", "BANGKOK", (179, 84, 30), "flame",
+     "Blast at Bangkok refinery hurts nine",
+     "Three critical; production halted.",
+     "AP", "CONFIRMED"),
+    ("POLITICS", "NAIROBI", (91, 70, 54), "scales",
+     "Kenya court halts Ebola facility",
+     "US-backed site breached constitution.",
+     "Reuters", "OFFICIAL"),
+    ("SECURITY", "COLOGNE", (140, 29, 24), "gavel",
+     "Germany arrests two over synagogue plot",
+     "Iraqis held after 17 raids; Iran link probed.",
+     "Reuters", "OFFICIAL"),
+    ("UN", "NAIROBI", (91, 70, 54), "people",
+     "UN opens housing summit in Nairobi",
+     "3.4bn lack decent homes, UN-Habitat says.",
+     "UN News", "OFFICIAL"),
     ("LABOUR", "DHAKA", (20, 83, 45), "mega",
      "Bangladesh garment protests flare",
      "Police fire tear gas; 360 factories shut in unrest.",
@@ -195,47 +190,53 @@ GRID = [
      "UK net migration falls to 77,000",
      "Lowest since 1997 outside the pandemic, figures show.",
      "Reuters", "OFFICIAL"),
+    ("POLITICS", "PYONGYANG", (91, 70, 54), "flag",
+     "N. Korea expels Swiss envoy",
+     "Pyongyang orders the Swiss office to close.",
+     "Arirang", "REPORTED"),
 ]
 
 BRIEF = [
     ("VOTE", "Spain votes Sunday; right leads polls"),
-    ("COURT", "S. Africa court scraps Ramaphosa report"),
-    ("FLOOD", "Indonesia mine flood kills 13"),
+    ("TRADE", "Sea trade stalls, costs climb"),
+    ("UN", "UN boosts Ituri Ebola protection"),
+    ("CLIMATE", "Early action halves El Niño bill"),
+    ("OPEC", "OPEC+ meets Sunday on output"),
+    ("GOLD", "Gold eases to $3,566 an ounce"),
+    ("MARKETS", "Wall Street shut for Thanksgiving"),
+    ("ENERGY", "Lukoil founder breaks sale silence"),
+    ("UN", "UN condemns peacekeepers' deaths"),
+    ("MARKETS", "S&P futures edge up 0.5%"),
     ("MEMORIAL", "Hong Kong marks year since fire killed 168"),
-    ("RETAIL", "Poundland collapses; 11,000 jobs at risk"),
-    ("SPORT", "Liverpool 3\u20130 Club Brugge; Lille stun Bayern"),
-    ("CULTURE", "Jennifer Barreto wins Miss Universe 2026"),
-    ("MUSIC", "Duran Duran guitarist Andy Taylor dies, 65"),
-    ("HEALTH", "Pig-kidney patient a year off dialysis"),
-    ("STRIKE", "Iran drone attack on Kuwait kills two"),
-    ("BORDER", "Iraq takes over Kurdistan border posts"),
 ]
 
 # Key figures of the day, all from the stories above.
 STATS = [
-    ("14", "tariff partners"),
-    ("100th", "Macy's parade"),
-    ("31", "killed, Cairo fire"),
-    ("12,000+", "Ebola cases"),
-    ("1m", "satellites cleared"),
+    ("3.25%", "BoK rate"),
     ("77,000", "UK net migration"),
+    ("12,000+", "Ebola cases"),
+    ("360", "factories shut"),
+    ("2m+", "barrels on one tanker"),
+    ("9", "hurt in Bangkok blast"),
 ]
 
 # Stories that look like 26 Nov news but are from another day: named here
 # so the date scope is explicit.
 DATECHECK = ("All 38 stories are from Thursday 26 November 2026. Kept out "
-             "as other days: Pitt\u2013Jolie deal, birthright ruling, "
-             "Poland no-fly plan, Murmansk sacking \u2014 all 25 Nov.")
+             "as other days: tariffs, Macy's, Cairo fire, Eurostar "
+             "\u2014 all 25 Nov.")
 
 # The day in UTC: only events with a verifiable UTC time on 26 Nov make
-# the strip. BoK announced ~01:00 GMT (Reuters); the ONS figures were
-# published at 09:30 (ONS release); the Tube strike starts at noon GMT
-# (Reuters). Everything else on the page has no solid UTC hour, so the
-# strip stays short rather than padded with guesses.
+# the strip. BoK announced ~01:00 GMT (Reuters); the Bangkok blast was
+# ~07:45 GMT (BBC: 14:45 local); the ONS figures were published at 09:30
+# (ONS release); the Tube strike starts at noon GMT (Reuters). Everything
+# else on the page has no solid UTC hour, so the strip stays short rather
+# than padded with guesses.
 TIMELINE = [
-    ("01:00", "Bank of Korea lifts rate to 3.25%"),
-    ("09:30", "ONS: UK net migration falls to 77,000"),
-    ("12:00", "London Tube strike begins at noon"),
+    ("01:00", "BoK lifts rate to 3.25%"),
+    ("07:45", "Bangkok refinery blast"),
+    ("09:30", "UK net migration 77,000"),
+    ("12:00", "Tube strike begins at noon"),
 ]
 
 # Status tags: OFFICIAL only for an official statement or announcement,
@@ -248,10 +249,10 @@ STATUS_COLORS = {
 
 # Numbered dots on the world map: (lon, lat, number, label).
 DOTS = [
-    (-77, 39, "1", "Washington"), (47, 25, "2", "Riyadh"),
-    (-74, 41, "3", "New York"), (31, 30, "4", "Cairo"),
-    (31, 50, "5", "Kyiv"), (116, 40, "6", "Beijing"),
-    (0, 51, "7", "London"), (15, -4, "8", "Kinshasa"),
+    (127, 37, "1", "Seoul"), (48, 29, "2", "Kuwait"),
+    (44, 33, "3", "Baghdad"), (100, 14, "4", "Bangkok"),
+    (31, 50, "5", "Kyiv"), (0, 51, "6", "London"),
+    (15, -4, "7", "Kinshasa"), (90, 24, "8", "Dhaka"),
 ]
 
 # ---------------------------------------------------------------- icons
@@ -548,26 +549,51 @@ def draw_masthead(d):
     d.rectangle([24, 102, 1000, 103], fill=INK)
 
 
-def draw_bar_chart(d, x, y, w, h):
-    """Mini tariff bars: China 40, India 25, Japan 15."""
-    data = [("CHINA 40%", 40), ("INDIA 25%", 25), ("JAPAN 15%", 15)]
+def draw_bar_chart(d, x, y, w, h, data, base=0.0, color=(20, 83, 45)):
+    """Mini bar chart; `data` is [(label, value), ...]. Bars rise from
+    `base` (a truncated axis — the value labels carry the real numbers),
+    centred in the visual."""
+    mx = max(v for _, v in data)
     bw = 52
     gap = 26
-    x0 = x + 14
-    base = y + h - 22
+    total = len(data) * bw + (len(data) - 1) * gap
+    x0 = x + (w - total) // 2
+    base_y = y + h - 22
     fnt = font(SANS_B, 11)
     for i, (label, val) in enumerate(data):
         bx = x0 + i * (bw + gap)
-        bh = int((h - 40) * val / 40)
-        d.rectangle([bx, base - bh, bx + bw, base], fill=(31, 78, 121))
-        d.text((bx, base - bh - 15), str(val) + "%", font=fnt, fill=INK)
-        d.text((bx - 4, base + 4), label, font=fnt, fill=GREY)
-    d.line([x + 8, base, x + w - 8, base], fill=INK, width=1)
+        bh = int((h - 40) * (val - base) / (mx - base))
+        d.rectangle([bx, base_y - bh, bx + bw, base_y], fill=color)
+        d.text((bx, base_y - bh - 15), f"{val:.2f}%", font=fnt, fill=INK)
+        d.text((bx - 4, base_y + 4), label, font=fnt, fill=GREY)
+    d.line([x + 8, base_y, x + w - 8, base_y], fill=INK, width=1)
 
 
 def draw_lead_visual(d, kind, x, y, w, h):
-    if kind == "tariffs":
-        draw_bar_chart(d, x, y, w, h)
+    if kind == "bars":
+        # Bank of Korea rate path: 2.75% (Jul), 3.00% (Aug), 3.25% (Nov),
+        # bars from the 2.50% pre-hike level so the steps read clearly.
+        draw_bar_chart(d, x, y, w, h,
+                       [("JUL", 2.75), ("AUG", 3.00), ("NOV", 3.25)],
+                       base=2.50)
+        return
+    if kind == "gate":
+        # Border checkpoint at dusk: posts, striped barrier, flag.
+        d.rectangle([x, y, x + w, y + h], fill=(52, 62, 88))
+        d.ellipse([x + w - 42, y + 8, x + w - 18, y + 32],
+                  fill=(240, 190, 90))
+        d.rectangle([x, y + h - 16, x + w, y + h], fill=(30, 32, 40))
+        d.rectangle([x + 16, y + 16, x + 22, y + h - 16], fill=(20, 20, 24))
+        d.rectangle([x + w - 22, y + 16, x + w - 16, y + h - 16],
+                    fill=(20, 20, 24))
+        by = y + 24
+        seg = (w - 38) // 6
+        for i in range(6):
+            col = (179, 35, 27) if i % 2 == 0 else WHITE
+            d.rectangle([x + 22 + i * seg, by,
+                         x + 22 + (i + 1) * seg, by + 8], fill=col)
+        d.polygon([(x + 22, y + 16), (x + 42, y + 20), (x + 22, y + 24)],
+                  fill=(179, 35, 27))
         return
     if kind == "missile":
         d.rectangle([x, y, x + w, y + h], fill=(16, 28, 48))
@@ -584,23 +610,7 @@ def draw_lead_visual(d, kind, x, y, w, h):
         d.line([x + 12, y + h - 8, ex - 8, ey + 10], fill=WHITE, width=2)
         d.line([x + 60, y + h - 4, ex - 20, ey + 16], fill=WHITE, width=2)
         return
-    if kind == "balloon":
-        d.rectangle([x, y, x + w, y + h], fill=(120, 140, 165))
-        # storm cloud + rain
-        d.ellipse([x + 8, y + 6, x + 70, y + 30], fill=(70, 80, 100))
-        d.ellipse([x + 40, y + 2, x + 110, y + 28], fill=(85, 95, 115))
-        for rx in range(x + 14, x + w - 8, 18):
-            d.line([rx, y + 34, rx - 5, y + 52], fill=(230, 235, 240),
-                   width=2)
-        # big balloon, half-deflated on the street
-        d.ellipse([x + w // 2 - 46, y + 34, x + w // 2 + 46, y + h - 6],
-                  fill=(179, 35, 27))
-        d.ellipse([x + w // 2 - 46, y + 34, x + w // 2 + 46, y + h - 6],
-                  outline=(120, 20, 15), width=2)
-        d.line([x + w // 2 - 46, y + (34 + h - 6) // 2,
-                x + w // 2 + 46, y + (34 + h - 6) // 2],
-               fill=(120, 20, 15), width=2)
-        return
+
 
 
 def status_pill_width(st):
@@ -631,7 +641,7 @@ def draw_tagline(d, tx, ty, tw, tag, place, color, src, tag_size=10,
 
 def draw_lead(d, lead, x, y, w, h):
     d.rectangle([x, y, x + w, y + h], fill=WHITE, outline=RULE, width=1)
-    vh = 60 if lead["kind"] != "tariffs" else 72
+    vh = 72 if lead["kind"] == "bars" else 60
     draw_lead_visual(d, lead["kind"], x + 1, y + 1, w - 2, vh)
     pw = status_pill_width(lead["st"])
     draw_status_pill(d, lead["st"], x + w - 6 - pw, y + vh - 19)
@@ -726,10 +736,10 @@ def draw_map(d, x, y, w, h):
         tw = fnt.getlength(num)
         d.text((px - tw / 2, py - 8), num, font=fnt, fill=WHITE)
     kf = font(SANS, 9)
-    for i, kline in enumerate(("1 Washington  \u2022  2 Riyadh  \u2022  "
-                               "3 New York  \u2022  4 Cairo",
-                               "5 Kyiv  \u2022  6 Beijing  \u2022  7 London"
-                               "  \u2022  8 Kinshasa")):
+    for i, kline in enumerate(("1 Seoul  \u2022  2 Kuwait  \u2022  "
+                               "3 Baghdad  \u2022  4 Bangkok",
+                               "5 Kyiv  \u2022  6 London  \u2022  7 Kinshasa"
+                               "  \u2022  8 Dhaka")):
         kw = kf.getlength(kline)
         d.text((x + (w - kw) / 2, y + h - 30 + i * 13), kline, font=kf,
                fill=GREY)
@@ -815,8 +825,7 @@ def build():
     draw_brief(d, 530, 868, 470, 124)
     # footer
     foot = ("All events of Thursday 26 November 2026  \u2022  Sources: "
-            "Reuters, CNN, CNBC, Xinhua, Arirang, KCNA, Al Jazeera, "
-            "UKMTO, Ofgem, ESA")
+            "Reuters, AP, FT, WHO, UN News, Arirang")
     fnt = font(SANS, 11)
     tw = fnt.getlength(foot)
     d.text(((W - tw) / 2, 1002), foot, font=fnt, fill=GREY)
